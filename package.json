@@ -51,7 +51,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8900/api",
+  "proxy": "https://backend-1gn8.onrender.com/api",
   "devDependencies": {
     "tailwindcss": "^3.3.6"
   }
