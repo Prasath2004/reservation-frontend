@@ -1,0 +1,20 @@
+.contain {
+    border: 1px solid grey;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    padding-left: 130px;
+}
+
+.leftCont {
+    display: flex;
+    flex-direction: row;
+}
+
+.rightCont {
+    display: flex;
+    flex-direction: row;
+}
