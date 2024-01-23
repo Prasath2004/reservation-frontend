@@ -40,7 +40,7 @@ const Profile = () => {
                 ...info,
                 img: url,
             };
-            await axios.post("/auth/register", newUser);
+            await axios.post("https://backend-1gn8.onrender.com/api/auth/register", newUser);
             console.log(url);
             navigate("/login");
 
