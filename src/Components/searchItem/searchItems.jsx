@@ -28,7 +28,7 @@ const searchItems = ({ item }) => {
         <div className="siDetailTexts">
           <span className="siPrice">₹{item?.cheapestPrice}</span>
           <span className="siTaxOp">Includes taxes and fees</span>
-          <Link to={`https://backend-1gn8.onrender.com/api/hotel/${item?._id}`}>
+          <Link to={`/hotel/${item?._id}`}>
             <button className="siCheckButton">See availability</button>
           </Link>
         </div>
