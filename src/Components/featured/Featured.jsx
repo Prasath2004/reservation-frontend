@@ -3,7 +3,7 @@ import useFetch from '../../hooks/useFetch';
 
 const Featured = () => {
 
-    const { data, loading, error } = useFetch("/hotels/countByCity?cities=Madurai,Chennai,Coimbatore")
+    const { data, loading, error } = useFetch("https://backend-1gn8.onrender.com/api/hotels/countByCity?cities=Madurai,Chennai,Coimbatore")
     console.log(data);
 
     return (
