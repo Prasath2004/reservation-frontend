@@ -28,9 +28,9 @@ const Dropdown = ({ setOpenProfile }) => {
     return (
         <div className='flex flex-col dropDownProfile'>
             <ul className='flex flex-col gap-4 '>
-                <li onClick={handleProfile}>Profile</li>
-                <li onClick={handleBookings}>My Bookings</li>
-                <li onClick={handleClick}>Logout</li>
+                <li onClick={handleProfile} className='pointer'>Profile</li>
+                <li onClick={handleBookings} className='pointer'>My Bookings</li>
+                <li onClick={handleClick} className='pointer'>Logout</li>
             </ul>
         </div>
     )

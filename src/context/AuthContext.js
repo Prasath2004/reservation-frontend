@@ -13,7 +13,7 @@ const AuthReducer = (state, action) => {
       return {
         user: null,
         loading: true,
-        error: null,  
+        error: null,
       };
     case "LOGIN_SUCCESS":
       return {
@@ -27,16 +27,24 @@ const AuthReducer = (state, action) => {
         loading: false,
         error: action.payload,
       };
+
     case "LOGOUT":
       return {
         user: null,
         loading: false,
         error: null,
       };
+   
+
     default:
       return state;
   }
 };
+
+// export const updateUser = (dispatch, updatedUser) => {
+//   dispatch({ type: "UPDATE_USER", payload: updatedUser });
+//   localStorage.setItem("user", JSON.stringify(updatedUser));
+// };
 
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
