@@ -17,7 +17,10 @@ const Profile = () => {
         console.log("sdsd");
         axios.delete(`https://backend-1gn8.onrender.com/api/users/delete/${iid}`);
         window.alert("Deleted successfully!");
-        navigate('/');
+      
+            dispatch({ type: "LOGOUT" });
+            navigate("/")
+          
     }
 
     return (
