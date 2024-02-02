@@ -29,7 +29,7 @@ const Register = () => {
         data.append("file", file)
         data.append("upload_preset", "upload")
         try {
-            const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/dvxyn4laa/image/upload", data);
+            const uploadRes = await axios.post("http://api.cloudinary.com/v1_1/dvxyn4laa/image/upload", data);
             const { url } = uploadRes.data;
             // setInfo((prevInfo) => ({ ...prevInfo, img: url }));
             const newUser = {
