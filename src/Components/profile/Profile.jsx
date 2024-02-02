@@ -15,9 +15,9 @@ const Profile = () => {
         const iid = user._id;
         console.log(iid);
         console.log("sdsd");
-        await axios.delete(`https://backend-1gn8.onrender.com/api/users/userDelete/${iid}`);
-        console.log("Deleted");
-        // navigate('/');
+        axios.delete(`https://backend-1gn8.onrender.com/api/users/delete/${iid}`);
+        window.alert("Deleted successfully!");
+        navigate('/');
     }
 
     return (
@@ -28,7 +28,7 @@ const Profile = () => {
                 <div className="content">
 
                     <table className='table'>
-                        <tr colspan="2" >
+                        <tr>
                             <th className='tablee'>Personal Details <br />
                                 you can check your details and you can edit it here! <br />
 
