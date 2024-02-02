@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react'
 import { AuthContext } from '../../context/AuthContext'
 import { updateUser } from '../../context/AuthContext'
+
 const Updateuser = () => {
     const { user, dispatch } = useContext(AuthContext);
     const [file, setFile] = useState("");
@@ -26,10 +27,15 @@ const Updateuser = () => {
     const handleChange = e => {
         setInfo(prev => ({ ...prev, [e.target.id]: e.target.value }));
     };
+
+
+
+
+
     const handleClick = async e => {
         e.preventDefault();
         const iid = user._id;
-        const data = new FormData()
+        //const data = new FormData()
         //data.append("file", file)
         //data.append("upload_preset", "upload")
         try {
@@ -42,12 +48,29 @@ const Updateuser = () => {
             // };
 
             await axios.put(`https://backend-1gn8.onrender.com/api/users/userUpdate`, { user: info, id: iid });
-           // updateUser(dispatch, info);
-            navigate("/profile")
 
+            // updateUser(dispatch, info);
+            navigate("/profile");
+            updateLocal();
         } catch (err) {
             console.log(err.response.data);
         }
+
+    }
+    const updateLocal = () => {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        const updateduser = {
+            ...storedUser,
+            username: info.username,
+            email: info.email,
+            country: info.country,
+            city: info.city,
+            phone: info.phone,
+            password: info.password,
+            img: info.img
+        }
+        localStorage.setItem('user', JSON.stringify(updateduser));
+
     }
 
     return (
@@ -91,7 +114,7 @@ const Updateuser = () => {
                                         </div>
                                     </div>
                                 </div >
-                                <button className='border-black bg-cyan-700 rounded-[5px] p-[10px] w-[90px] mb-5 ' onClick={handleClick}>Update</button>
+                                <button className='border-black bg-cyan-700 rounded-[5px] p-[10px] w-[90px] mb-5 ' onClick={handleClick} >Update</button>
                             </div>
                         </form>
                     </div>

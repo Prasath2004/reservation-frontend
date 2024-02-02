@@ -1,8 +1,15 @@
 import React from 'react'
+import Navbar from '../navbar/Navbar'
 
 const Mybookings = () => {
   return (
-    <div>Mybookings</div>
+    <div>
+
+      <Navbar/>
+      <div>
+        
+      </div>
+    </div>
   )
 }
 

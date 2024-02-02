@@ -2,16 +2,23 @@ import React, { useEffect } from 'react'
 import "./profile.css"
 import { useContext } from 'react'
 import { AuthContext } from '../../context/AuthContext'
-import { Link, useNavigate } from "react-router-dom"
+import { Link, Navigate, useNavigate } from "react-router-dom"
 import { useState } from 'react'
 import axios from "axios"
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import Navbar from '../navbar/Navbar'
 import Footer from '../footer/Footer'
 const Profile = () => {
-
+    const navigate = useNavigate();
     const { user, dispatch } = useContext(AuthContext);
-
+    const handleDelete = async () => {
+        const iid = user._id;
+        console.log(iid);
+        console.log("sdsd");
+        await axios.delete(`https://backend-1gn8.onrender.com/api/users/userDelete/${iid}`);
+        console.log("Deleted");
+        // navigate('/');
+    }
 
     return (
         <div className='total'>
@@ -23,13 +30,20 @@ const Profile = () => {
                     <table className='table'>
                         <tr colspan="2" >
                             <th className='tablee'>Personal Details <br />
-                                To see the updated details log in again.. <br /> <br />
+                                you can check your details and you can edit it here! <br />
+
+                                <br />
                                 <Link to={'/updateUser'}>
                                     <button className='button' >Edit</button>
                                 </Link>
+                                <br /><br />
+
+                                <button className='button' onClick={handleDelete}>Delete Account</button>
+
                             </th>
 
                             <th><img src={user.img} alt='profilephoto' className="w-[120px] h-[130px] rounded-[50%]" /><br />Profile Picture</th>
+
                         </tr>
                         <tr>
                             <td>User Name</td>

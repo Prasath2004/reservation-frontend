@@ -11,7 +11,7 @@ import { useContext } from 'react';
 import Mybookings from './Components/mybookings/Mybookings';
 import Dropdown from './Components/DropdownProfile/Dropdown';
 import Updateuser from './Components/updateuser/Updateuser';
-
+  
 function App() {
 
   const ProtectedRoute = ({ children }) => {
@@ -36,6 +36,7 @@ function App() {
         <Route path='/mybookings' element={<Mybookings />} />
         <Route path='/dropdown' element={<Dropdown />} />
         <Route path='/updateUser' element={<Updateuser/>} />
+        
       </Routes>
 
     </div>
