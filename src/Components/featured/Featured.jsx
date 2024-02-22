@@ -4,8 +4,6 @@ import useFetch from '../../hooks/useFetch';
 const Featured = () => {
 
     const { data, loading, error } = useFetch("https://backend-1gn8.onrender.com/api/hotels/countByCity?cities=Madurai,Chennai,Coimbatore")
-    console.log(data);
-
     return (
         <div className='w-[100%] max-w-[1024px] flex justify-between gap-[20px] z-[1px]'>
             {loading ? ("Loading please wait") : (<><div className="relative text-white	rounded-[20px]	overflow-hidden h-[250px] ">

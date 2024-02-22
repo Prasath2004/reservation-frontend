@@ -29,22 +29,22 @@ const Register = () => {
         data.append("file", file)
         data.append("upload_preset", "upload")
         try {
-            const uploadRes = await axios.post("http://api.cloudinary.com/v1_1/dvxyn4laa/image/upload", data);
+            const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/dvxyn4laa/image/upload", data);
             const { url } = uploadRes.data;
-            // setInfo((prevInfo) => ({ ...prevInfo, img: url }));
+
             const newUser = {
                 ...info,
                 img: url,
             };
             await axios.post("/auth/register", newUser);
-            console.log(url);
+
             navigate("/login");
 
         } catch (err) {
             console.log(err.response.data);
         }
-    }
-    // console.log(info);
+    };
+
     return (
         <div>
             <Navbar />

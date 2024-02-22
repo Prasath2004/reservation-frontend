@@ -24,7 +24,7 @@ const Login = () => {
     try {
       const res = await axios.post("https://backend-1gn8.onrender.com/api/auth/login", credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details});
-      console.log(res.data.details);
+      
       navigate("/")
     } catch (err) {
       console.log(err);
