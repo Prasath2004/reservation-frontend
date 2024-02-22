@@ -37,7 +37,6 @@ const Register = () => {
                 img: url,
             };
             await axios.post("/auth/register", newUser);
-
             navigate("/login");
 
         } catch (err) {

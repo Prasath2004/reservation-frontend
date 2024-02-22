@@ -23,7 +23,7 @@ const FeaturedProperties = () => {
             {item.rating && <div className="fpRating">
               <button className='border  bg-[#003580]	 p-[5px] text-white	'>{item.rating}</button>
               <span className='ml-[8px] text-sm	'>Ex
-              cellent</span>
+                cellent</span>
             </div>}
           </div>
         ))}
