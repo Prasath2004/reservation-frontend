@@ -13,8 +13,7 @@ const Profile = () => {
     const { user, dispatch } = useContext(AuthContext);
     const handleDelete = async () => {
         const iid = user._id;
-        console.log(iid);
-        console.log("sdsd");
+      
         axios.delete(`https://backend-1gn8.onrender.com/api/users/delete/${iid}`);
         window.alert("Deleted successfully!");
       
